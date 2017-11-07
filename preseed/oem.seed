@@ -78,4 +78,4 @@ d-i finish-install/reboot_in_progress note
 # which is useful in some situations
 d-i cdrom-detect/eject boolean false
 # Running a Final Script
-d-i preseed/late_command string cp /cdrom/factory/postscript.sh /target/root/; chroot /target chmod +x /root/postscript.sh; chroot /target bash /root/postscript.sh
+d-i preseed/late_command string cp /cdrom/postinstall/postscript.sh /target/root/; chroot /target chmod +x /root/postscript.sh; chroot /target bash /root/postscript.sh
