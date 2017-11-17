@@ -85,7 +85,7 @@ d-i  base-installer/kernel/altmeta   string lts-xenial
 # Run additional target commands
 d-i preseed/early_command string umount /media ||:
 # Running a Final Script
-d-i preseed/late_command string cp /cdrom/factory/postscript.sh /target/tmp/; \
+d-i preseed/late_command string cp /cdrom/postinstall/postscript.sh /target/tmp/; \
 		in-target chmod +x /tmp/postscript.sh; \
 		in-target bash /tmp/postscript.sh; \
 		in-target apt-get --purge -y autoremove ubiquity-frontend-kde
