@@ -64,4 +64,6 @@ d-i finish-install/reboot_in_progress note
 ubiquity ubiquity/success_command string \
     cp /cdrom/postinstall/postscript.sh /target/tmp/; \
     in-target chmod +x /tmp/postscript.sh; \
-    in-target bash /tmp/postscript.sh;
+    in-target bash /tmp/postscript.sh; \
+    in-target oem-config-prepare; \
+    umount /media ||:
