@@ -1,3 +1,13 @@
+# Enable OEM install mode
+d-i oem-config/enable boolean true
+d-i oem-config/id string Nvidia Inc.
+d-i oem-config/remove boolean true
+d-i oem-config/reboot boolean true
+#d-i oem-config/early_command string
+#d-i oem-config/late_command string
+#d-i oem-config/remove_extras boolean true
+#d-i oem-config/install-language-support boolean true
+
 # Partitioning
 # Old style using d-i command
 #d-i partman-auto/disk string /dev/sda
@@ -65,5 +75,10 @@ ubiquity ubiquity/success_command string \
     cp /cdrom/postinstall/postscript.sh /target/tmp/; \
     in-target chmod +x /tmp/postscript.sh; \
     in-target bash /tmp/postscript.sh; \
-    in-target oem-config-prepare; \
-    umount /media ||:
+    in-target oem-config-prepare --quiet
+#ubiquity ubiquity/failure_command string \
+#cp /cdrom/postinstall/postscript.sh /target/tmp/; \
+#in-target chmod +x /tmp/postscript.sh; \
+#in-target bash /tmp/postscript.sh failure
+ubiquity ubiquity/reboot boolean true
+ubiquity ubiquity/poweroff boolean false
