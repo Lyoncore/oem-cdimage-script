@@ -1,6 +1,13 @@
 # Enable OEM install mode
 
 d-i oem-config/enable boolean true
+d-i oem-config/id string Nvidia Inc.
+d-i oem-config/remove boolean true
+d-i oem-config/reboot boolean true
+#d-i oem-config/early_command string
+#d-i oem-config/late_command string
+#d-i oem-config/remove_extras boolean true
+#d-i oem-config/install-language-support boolean true
 
 # Create temporary OEM user - we preemptively delete the user before first
 # boot anyway for good measure, but the installer still requires setting
@@ -88,5 +95,5 @@ d-i preseed/early_command string umount /media ||:
 d-i preseed/late_command string cp /cdrom/postinstall/postscript.sh /target/tmp/; \
 		in-target chmod +x /tmp/postscript.sh; \
 		in-target bash /tmp/postscript.sh; \
-		in-target apt-get --purge -y autoremove ubiquity-frontend-kde
-#d-i preseed/late_command string in-target apt-get --purge -y autoremove ubiquity-frontend-kde; in-target oem-config-prepare
+		in-target apt-get --purge -y autoremove ubiquity-frontend-kde; \
+		in-target oem-config-prepare
