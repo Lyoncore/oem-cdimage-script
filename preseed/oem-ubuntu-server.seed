@@ -24,9 +24,10 @@ d-i user-setup/allow-password-weak boolean true
 # Make temporary localization selections to satisfy questions: we're
 # installing in OEM mode, so the actual localization choices are irrelevant.
 
+d-i languagechooser/language-name English
+d-i debian-installer/locale string en_US
 d-i keyboard-configuration/layoutcode string us
 d-i keyboard-configuration/variantcode string
-d-i debian-installer/locale string en_US.UTF-8
 d-i time/zone select US/Pacific
 d-i clock-setup/utc boolean true
 d-i clock-setup/ntp boolean false
