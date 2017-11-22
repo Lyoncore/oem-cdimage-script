@@ -97,4 +97,4 @@ d-i preseed/late_command string cp /cdrom/postinstall/postscript.sh /target/tmp/
 		in-target chmod +x /tmp/postscript.sh; \
 		in-target bash /tmp/postscript.sh; \
 		in-target apt-get --purge -y autoremove ubiquity-frontend-kde; \
-		in-target oem-config-prepare
+		in-target oem-config-prepare --quiet
