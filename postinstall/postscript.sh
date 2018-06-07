@@ -23,9 +23,9 @@ echo "[Mount cdrom]"
 #mount /dev/${USB_ISO}1 tmp.mount
 
 echo "[Install extras]"
-apt-get install -y openssh-server
+#apt-get install -y openssh-server
 
-dpkg -i /media/cdrom/pool/extras/*.deb
+#dpkg -i /media/cdrom/pool/extras/*.deb
 
 echo "[Umount cdrom]"
 #umount tmp.mount
