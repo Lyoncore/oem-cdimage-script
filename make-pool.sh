@@ -2,7 +2,6 @@
 mkdir -p ../oem-cdimage-script/pool/extras
 PCWD=$PWD
 cd ../oem-cdimage-script/pool/extras
-apt-get download tree htop vim
 #hwe kernel for 16.04
 if [ "$OEM_HWE_KERNEL" = "generic-hwe" ] ; then
 	apt-get download linux-firmware
