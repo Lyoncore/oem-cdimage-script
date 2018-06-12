@@ -1,6 +1,6 @@
 # Enable OEM install mode
 d-i oem-config/enable boolean true
-d-i oem-config/id string Nvidia Inc.
+d-i oem-config/id string Canonical Inc.
 d-i oem-config/remove boolean true
 d-i oem-config/reboot boolean true
 #d-i oem-config/early_command string
