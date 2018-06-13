@@ -9,6 +9,8 @@ d-i oem-config/reboot boolean true
 #d-i oem-config/remove_extras boolean true
 #d-i oem-config/install-language-support boolean true
 
+d-i debian-installer/finish-install boolean true
+
 # Create temporary OEM user - we preemptively delete the user before first
 # boot anyway for good measure, but the installer still requires setting
 # one up.
